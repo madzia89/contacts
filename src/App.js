@@ -1,21 +1,42 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {BrowserRouter as Router} from 'react-router-dom'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import AppBar from 'material-ui/AppBar'
+import Sidebar from './Sidebar'
+import Add from './Add'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+class App extends React.Component {
+    state = {
+        isDrawerOpen: false
+
+    }
+    drawerBtnClickHandler = () => this.setState({
+        isDrawerOpen: !this.state.isDrawerOpen
+    })
+
+    render() {
+        return (
+            <div>
+                <MuiThemeProvider>
+                    <AppBar
+                        title="Home"
+                        onLeftIconButtonClick={this.drawerBtnClickHandler}
+                    />
+                    <Router>
+                        <div>
+                            <Sidebar
+                                isDrawerOpen={this.state.isDrawerOpen}
+                                drawerBtnClickHandler={this.drawerBtnClickHandler}
+                            />
+                        </div>
+                    </Router>
+
+                <Add/>
+                </MuiThemeProvider>
+            </div>
+        )
+    }
+
 }
 
-export default App;
+export default App
