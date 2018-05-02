@@ -7,8 +7,8 @@ import Controls from './Controls'
 class Add extends React.Component {
     state = {
         contacts: [
-            {name: 'Benjamin', lastName: 'Morales', email: 'benjamin.morales22@example.com', phone: 8188291865},
-            {name: 'Clara', lastName: 'Matthews', email: 'clara.matthews35@example.com', phone: 8802174620}
+            {name: 'Benjamin Morales', email: 'benjamin.morales22@example.com', phone: '8188291865', uid: 9827},
+            {name: 'Clara Matthews', email: 'clara.matthews35@example.com', phone: '8802174620', uid: 981823}
         ],
         filterText: '',
         newContact: ''
@@ -24,6 +24,8 @@ class Add extends React.Component {
     addContact = () => {
         const newContact = {
             name: this.state.newContact,
+            phone: this.state.newContactPhone,
+            email: this.state.newContactEmail,
             uid: Date.now()
         }
         const newContacts = this.state.contacts.concat(newContact)
@@ -32,11 +34,23 @@ class Add extends React.Component {
         })
     }
 
-    newContactChangeHandler = (event, newValue) => {
+    newContactName= (event, firstName) => {
         this.setState({
-            newContact: newValue
+            newContact: firstName
         })
     }
+    newContactPhone = (event, phone) => {
+        this.setState({
+            newContactPhone: phone
+        })
+    }
+    newContactEmail = (event, email) => {
+        this.setState({
+            newContactEmail: email
+        })
+    }
+
+
     newFilterChangeHandler = (event, newValue) => {
         this.setState({
             filterText: newValue
@@ -48,10 +62,12 @@ class Add extends React.Component {
             <Paper>
                 <Controls
                     onClickHandler={this.addContact}
-                    onChangeHandler={this.newContactChangeHandler}
+                    onChangeName={this.newContactName}
+                    onChangePhone={this.newContactPhone}
+                    onChangeEmail={this.newContactEmail}
                     newContactValue={this.state.newContact}
                     onFilterChangeHandler={this.newFilterChangeHandler}
-                    filterContactValue={this.state.filterText}
+                    filtrContactValue={this.state.filterText}
 
                 />
 

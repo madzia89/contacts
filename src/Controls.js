@@ -7,10 +7,24 @@ import Paper from 'material-ui/Paper'
 const Controls = (props) => (
     <Paper>
         <TextField
-            onChange={props.onChangeHandler}
+            onChange={props.onChangeName}
             value={props.newContactValue}
             name={'new-contact'}
-            placeholder={'Add new contact'}
+            placeholder={'Add your name'}
+            fullWidth={true}
+        />
+        <TextField
+            onChange={props.onChangePhone}
+            value={props.newContactPhone}
+            name={'new-contact'}
+            placeholder={'Add phone number'}
+            fullWidth={true}
+        />
+        <TextField
+            onChange={props.onChangeEmail}
+            value={props.newContactEmail}
+            name={'new-contact'}
+            placeholder={'Add e-mail address'}
             fullWidth={true}
         />
         <RaisedButton

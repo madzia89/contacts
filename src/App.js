@@ -16,8 +16,8 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
-                <MuiThemeProvider>
+            <MuiThemeProvider>
+                <div>
                     <AppBar
                         title="Home"
                         onLeftIconButtonClick={this.drawerBtnClickHandler}
@@ -30,10 +30,9 @@ class App extends React.Component {
                             />
                         </div>
                     </Router>
-
-                <Add/>
-                </MuiThemeProvider>
-            </div>
+                    <Add/>
+                </div>
+            </MuiThemeProvider>
         )
     }
 
