@@ -34,9 +34,9 @@ class Add extends React.Component {
         })
     }
 
-    newContactName= (event, firstName) => {
+    newContactName= (event, name) => {
         this.setState({
-            newContact: firstName
+            newContact: name
         })
     }
     newContactPhone = (event, phone) => {
