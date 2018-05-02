@@ -1,16 +1,16 @@
 import React from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
-import Paper from 'material-ui/Paper'
+import Styles from './Styles'
 
 
 const Controls = (props) => (
-    <Paper>
+    <Styles>
         <TextField
             onChange={props.onChangeName}
             value={props.newContactValue}
             name={'new-contact'}
-            placeholder={'Add your name'}
+            placeholder={'Add name '}
             fullWidth={true}
         />
         <TextField
@@ -40,7 +40,7 @@ const Controls = (props) => (
             placeholder={'Filter contact'}
             fullWidth={true}
         />
-    </Paper>
+    </Styles>
 )
 
 export default Controls

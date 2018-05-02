@@ -1,10 +1,11 @@
 import React from 'react'
-import Paper from 'material-ui/Paper'
+import Styles from './Styles'
 import List from './List'
 import Controls from './Controls'
 
 
 class Add extends React.Component {
+
     state = {
         contacts: [
             {name: 'Benjamin Morales', email: 'benjamin.morales22@example.com', phone: '8188291865', uid: 9827},
@@ -59,7 +60,7 @@ class Add extends React.Component {
 
     render() {
         return (
-            <Paper>
+            <Styles>
                 <Controls
                     onClickHandler={this.addContact}
                     onChangeName={this.newContactName}
@@ -68,7 +69,6 @@ class Add extends React.Component {
                     newContactValue={this.state.newContact}
                     onFilterChangeHandler={this.newFilterChangeHandler}
                     filtrContactValue={this.state.filterText}
-
                 />
 
                 <List
@@ -76,9 +76,10 @@ class Add extends React.Component {
                     contactsList={this.state.contacts}
                     filterName={this.state.filterText}
                 />
-            </Paper>
+            </Styles>
         )
     }
+
 }
 
 export default Add

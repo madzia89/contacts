@@ -1,9 +1,9 @@
 import React from 'react'
 import DeleteContact from './DeleteContact'
-import Paper from 'material-ui/Paper'
+import Styles from './Styles'
 
 const List = ({contactsList, deleteContactFunction, filterName}) => (
-    <Paper>
+    <Styles>
         {
             contactsList
                 .filter(contact => (contact.name.toLowerCase().indexOf(filterName.toLowerCase()) &&
@@ -19,7 +19,7 @@ const List = ({contactsList, deleteContactFunction, filterName}) => (
                     />
                 ))
         }
-    </Paper>
+    </Styles>
 )
 
 export default List
