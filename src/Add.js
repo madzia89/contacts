@@ -7,8 +7,8 @@ import Controls from './Controls'
 class Add extends React.Component {
     state = {
         contacts: [
-            {name: 'umyj naczynia ', uid: 82664478218},
-            {name: 'biegaj ', uid: 82686478218}
+            {name: 'Benjamin', lastName: 'Morales', email: 'benjamin.morales22@example.com', phone: 8188291865},
+            {name: 'Clara', lastName: 'Matthews', email: 'clara.matthews35@example.com', phone: 8802174620}
         ],
         filterText: '',
         newContact: ''
@@ -51,7 +51,7 @@ class Add extends React.Component {
                     onChangeHandler={this.newContactChangeHandler}
                     newContactValue={this.state.newContact}
                     onFilterChangeHandler={this.newFilterChangeHandler}
-                    filtrContactValue={this.state.filterText}
+                    filterContactValue={this.state.filterText}
 
                 />
 

@@ -21,7 +21,7 @@ const Controls = (props) => (
         />
         <TextField
             onChange={props.onFilterChangeHandler}
-            value={props.filtrContactValue}
+            value={props.filterContactValue}
             name={'filter-contacts'}
             placeholder={'Filter contact'}
             fullWidth={true}
