@@ -13,6 +13,7 @@ class Add extends React.Component {
         ],
         filterText: '',
         newContact: ''
+
     }
 
     deleteContact = (contactUid) => {
@@ -31,26 +32,38 @@ class Add extends React.Component {
         }
         const newContacts = this.state.contacts.concat(newContact)
         this.setState({
-            contacts: newContacts
+            contacts: newContacts,
         })
+        this.clearTextFields()
+    }
+    clearTextFields = () => {
+        document.getElementById('nameField').value = ""
+        document.getElementById('phoneField').value = ""
+        document.getElementById('emailField').value = ""
     }
 
-    newContactName= (event, name) => {
-        this.setState({
-            newContact: name
-        })
+    newContactNameF = (event, name) => {
+        if (name !== null) {
+            this.setState({
+                newContact: name
+            })
+        }
     }
-    newContactPhone = (event, phone) => {
-        this.setState({
-            newContactPhone: phone
-        })
+    newContactPhoneF = (event, phone) => {
+        if (phone !== null) {
+            this.setState({
+                newContactPhone: phone
+            })
+        }
     }
-    newContactEmail = (event, email) => {
-        this.setState({
-            newContactEmail: email
-        })
-    }
+    newContactEmailF = (event, email) => {
+        if (email !== null) {
+            this.setState({
+                newContactEmail: email,
+            })
+        }
 
+    }
 
     newFilterChangeHandler = (event, newValue) => {
         this.setState({
@@ -63,9 +76,9 @@ class Add extends React.Component {
             <Styles>
                 <Controls
                     onClickHandler={this.addContact}
-                    onChangeName={this.newContactName}
-                    onChangePhone={this.newContactPhone}
-                    onChangeEmail={this.newContactEmail}
+                    onChangeName={this.newContactNameF}
+                    onChangePhone={this.newContactPhoneF}
+                    onChangeEmail={this.newContactEmailF}
                     newContactValue={this.state.newContact}
                     onFilterChangeHandler={this.newFilterChangeHandler}
                     filtrContactValue={this.state.filterText}

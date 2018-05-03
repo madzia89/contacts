@@ -9,23 +9,26 @@ const Controls = (props) => (
         <TextField
             onChange={props.onChangeName}
             value={props.newContactValue}
-            name={'new-contact'}
-            placeholder={'Add name '}
+            name={'new-contactName'}
+            placeholder={'Add name*'}
             fullWidth={true}
+            id={'nameField'}
         />
         <TextField
             onChange={props.onChangePhone}
             value={props.newContactPhone}
-            name={'new-contact'}
-            placeholder={'Add phone number'}
+            name={'new-contactPhone'}
+            placeholder={'Add phone number*'}
             fullWidth={true}
+            id={'phoneField'}
         />
         <TextField
             onChange={props.onChangeEmail}
             value={props.newContactEmail}
-            name={'new-contact'}
-            placeholder={'Add e-mail address'}
+            name={'new-contactEmail'}
+            placeholder={'Add e-mail address*'}
             fullWidth={true}
+            id={'emailField'}
         />
         <RaisedButton
             onClick={props.onClickHandler}
