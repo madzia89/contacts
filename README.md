@@ -8,3 +8,5 @@ Download repository, type $ npm install in the project terminal and wait for the
 Launch development server by using $ npm start command.
 
 Check the app at http://pumped-contacts.surge.sh/
+
+made by https://github.com/madzia89
