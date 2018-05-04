@@ -39,6 +39,8 @@ class Add extends React.Component {
                 newContactEmail: '',
             })
             this.clearTextFields()
+        } else {
+            alert('fill required fields')
         }
     }
 
