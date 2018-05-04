@@ -8,7 +8,7 @@ const Controls = (props) => (
     <Styles>
         <TextField
             onChange={props.onChangeName}
-            value={props.newContactValue}
+            value={props.newContact}
             name={'new-contactName'}
             placeholder={'Add name*'}
             fullWidth={true}

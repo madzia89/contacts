@@ -30,12 +30,18 @@ class Add extends React.Component {
             email: this.state.newContactEmail,
             uid: Date.now()
         }
-        const newContacts = this.state.contacts.concat(newContact)
-        this.setState({
-            contacts: newContacts,
-        })
-        this.clearTextFields()
+        if ((newContact.name !== '') && (newContact.email !== '') && (newContact.phone !== '')) {
+            const newContacts = this.state.contacts.concat(newContact)
+            this.setState({
+                contacts: newContacts,
+                newContact: '',
+                newContactPhone: '',
+                newContactEmail: '',
+            })
+            this.clearTextFields()
+        }
     }
+
     clearTextFields = () => {
         document.getElementById('nameField').value = ""
         document.getElementById('phoneField').value = ""
@@ -43,26 +49,19 @@ class Add extends React.Component {
     }
 
     newContactNameF = (event, name) => {
-        if (name !== null) {
-            this.setState({
-                newContact: name
-            })
-        }
+        this.setState({
+            newContact: name
+        })
     }
     newContactPhoneF = (event, phone) => {
-        if (phone !== null) {
-            this.setState({
-                newContactPhone: phone
-            })
-        }
+        this.setState({
+            newContactPhone: phone
+        })
     }
     newContactEmailF = (event, email) => {
-        if (email !== null) {
-            this.setState({
-                newContactEmail: email,
-            })
-        }
-
+        this.setState({
+            newContactEmail: email,
+        })
     }
 
     newFilterChangeHandler = (event, newValue) => {
@@ -79,7 +78,6 @@ class Add extends React.Component {
                     onChangeName={this.newContactNameF}
                     onChangePhone={this.newContactPhoneF}
                     onChangeEmail={this.newContactEmailF}
-                    newContactValue={this.state.newContact}
                     onFilterChangeHandler={this.newFilterChangeHandler}
                     filtrContactValue={this.state.filterText}
                 />
