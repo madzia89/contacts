@@ -15,6 +15,11 @@ class Add extends React.Component {
         newContact: ''
 
     }
+    componentWillMount(){
+        localStorage.getItem('contacts') && this.setState({
+            contacts: JSON.parse(localStorage.getItem('contacts'))
+        })
+    }
 
     deleteContact = (contactUid) => {
         const newContacts = this.state.contacts.filter(contact => contactUid !== contact.uid)
@@ -72,6 +77,10 @@ class Add extends React.Component {
         })
     }
 
+    componentWillUpdate(nextProps, nextState) {
+        localStorage.setItem('contacts', JSON.stringify(nextState.contacts))
+        localStorage.setItem('contactsDate', Date.now())
+    }
     render() {
         return (
             <Styles>
