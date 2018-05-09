@@ -32,7 +32,7 @@ const Controls = (props) => (
         />
         <RaisedButton
             onClick={props.onClickHandler}
-            primary={true}
+            backgroundColor={'pink'}
             fullWidth={true}
             label={'ADD'}
         />

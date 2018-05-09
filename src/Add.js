@@ -35,13 +35,13 @@ class Add extends React.Component {
             email: this.state.newContactEmail,
             uid: Date.now()
         }
-        if ((newContact.name !== '') && (newContact.email !== '') && (newContact.phone !== '')) {
+        if ((newContact.name !== undefined) && (newContact.email !== undefined) && (newContact.phone !== undefined)) {
             const newContacts = this.state.contacts.concat(newContact)
             this.setState({
                 contacts: newContacts,
-                newContact: '',
-                newContactPhone: '',
-                newContactEmail: '',
+                newContact: undefined,
+                newContactPhone: undefined,
+                newContactEmail: undefined,
             })
             this.clearTextFields()
         } else {
@@ -50,9 +50,9 @@ class Add extends React.Component {
     }
 
     clearTextFields = () => {
-        document.getElementById('nameField').value = ""
-        document.getElementById('phoneField').value = ""
-        document.getElementById('emailField').value = ""
+        document.getElementById('nameField').value = ''
+        document.getElementById('phoneField').value = ''
+        document.getElementById('emailField').value = ''
     }
 
     newContactNameF = (event, name) => {
