@@ -5,8 +5,6 @@ Local storage helps to keep your contacts on your computer.
 
 Download repository, type $ npm install in the project terminal and wait for the modules to be downloaded.
 
-Launch development server by using $ npm start command.
-
-Check the app at http://pumped-contacts.surge.sh/
+Launch development server by using ```$ npm start```
 
 made by https://github.com/madzia89
