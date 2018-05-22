@@ -3,7 +3,7 @@ Fill text fields and click "ADD".
 
 Local storage helps to keep your contacts on your computer.
 
-Download repository, type $ npm install in the project terminal and wait for the modules to be downloaded.
+Download repository, type ```$ npm install``` in the terminal and wait for the modules to be downloaded.
 
 Launch development server by using ```$ npm start```
 
